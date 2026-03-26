@@ -10,8 +10,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "SIARI - Evaluador de Riesgos de TI",
-  description: "Sistema Institucional de Análisis de Riesgos en Información - Universidad de Cundinamarca",
+  title: "SARI - Evaluador de Riesgos de TI",
+  description: "Sistema de Análisis de Riesgos en Información - Universidad de Cundinamarca",
 };
 
 export default function RootLayout({

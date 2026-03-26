@@ -163,7 +163,7 @@ export default function Paso3Valoracion() {
           <ArrowLeft className="w-5 h-5" />
           Volver a Amenazas
         </Button>
-        <Button type="button" size="lg" className="w-full sm:w-auto gap-2 bg-gradient-to-r from-uc-yellow-gold to-[#c29800] text-white shadow-lg shadow-uc-yellow-gold/20 border-none hover:opacity-90" onClick={handleNext}>
+        <Button type="button" size="lg" className="w-full sm:w-auto gap-2 bg-uc-yellow-gold hover:bg-[#c29800] text-white shadow-md shadow-uc-yellow-gold/20 border-none" onClick={handleNext}>
           Calcular Matriz
           <ArrowRight className="w-5 h-5" />
         </Button>

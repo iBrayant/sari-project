@@ -13,11 +13,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-uc-green focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
     
     const variants = {
-      default: "bg-gradient-to-r from-uc-green to-uc-green-dark text-white hover:shadow-lg hover:-translate-y-0.5 shadow-md",
-      secondary: "bg-uc-yellow-gold text-white hover:bg-uc-yellow-gold/90 shadow-sm",
+      default: "bg-uc-green text-white hover:bg-uc-green-dark shadow-md hover:-translate-y-0.5",
+      secondary: "bg-uc-yellow-gold text-white hover:bg-[#c29800] shadow-sm",
       outline: "border-2 border-uc-green text-uc-green bg-transparent hover:bg-uc-green hover:text-white",
       ghost: "hover:bg-uc-gray/10 text-uc-gray",
-      danger: "bg-red-50 text-red-600 hover:bg-red-100",
+      danger: "bg-red-500 text-white hover:bg-red-600 shadow-sm",
     }
     
     const sizes = {

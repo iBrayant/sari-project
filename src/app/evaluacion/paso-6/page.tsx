@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useMemo } from "react"
+import { useEffect, useMemo } from "react"
 import { useRouter } from "next/navigation"
 import { useEvaluationStore } from "@/store/useEvaluationStore"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Printer, ShieldCheck } from "lucide-react"
+import { ArrowLeft, Printer } from "lucide-react"
+import Image from "next/image"
 
 const ISO_CONTROLS: Record<string, string> = {
   "t1": "Implementar autenticación de doble factor (2FA), gestión de contraseñas seguras y control de acceso basado en roles.",
@@ -71,18 +72,18 @@ export default function Paso6Reporte() {
       <hr className="border-uc-gray/10 print:hidden" />
 
       {/* CONTENEDOR DEL REPORTE */}
-      <div className="bg-white rounded-xl border border-uc-gray/20 shadow-sm overflow-hidden p-6 sm:p-10 mx-auto max-w-[850px] print:border-none print:shadow-none print:p-0">
+      <div className="bg-white rounded-xl border border-uc-gray/20 shadow-sm p-6 sm:p-10 mx-auto max-w-[850px] print:border-none print:shadow-none print:p-0">
         
         {/* Cabecera del Reporte */}
-        <div className="border-b-[4px] border-uc-green mb-8 pb-6 text-center">
-          <div className="flex justify-center mb-4">
-            <div className="bg-gradient-to-br from-uc-green to-uc-green-dark p-3.5 rounded-2xl shadow-sm print:shadow-none">
-              <ShieldCheck className="h-12 w-12 text-white" />
-            </div>
+        <div className="border-b-[4px] border-uc-green mb-8 pb-6 flex flex-col items-center">
+          <div className="flex items-center justify-center gap-6 mb-4">
+             <h1 className="text-6xl font-black text-uc-green-dark leading-none" style={{ fontFamily: '"Century Gothic", sans-serif' }}>
+               SARI
+             </h1>
+             <div className="w-px h-12 bg-uc-gray/20"></div>
+             <img src="/logo-udec.png" alt="Universidad de Cundinamarca" className="h-12 w-auto object-contain" />
           </div>
-          <h1 className="text-4xl font-black text-uc-green-dark uppercase tracking-wide mb-2">SIARI</h1>
-          <h2 className="text-xl font-bold text-uc-gray">Evaluador de Riesgos en Proyectos de TI</h2>
-          <p className="text-xs font-bold text-uc-green tracking-widest uppercase mt-4">Universidad de Cundinamarca</p>
+          <h2 className="text-lg font-bold text-uc-gray bg-slate-50 px-4 py-1.5 rounded-lg border border-uc-gray/10">Evaluador de Riesgos en Proyectos de TI</h2>
         </div>
 
         {/* Sección 1: Datos del Proyecto */}
@@ -129,13 +130,13 @@ export default function Paso6Reporte() {
           </h3>
           
           <div className="rounded-xl border-2 border-uc-gray/10 overflow-hidden shadow-sm print:border print:shadow-none">
-            <table className="w-full text-left text-sm print:text-xs">
+            <table className="w-full text-left text-sm print:text-[11px]">
               <thead className="bg-uc-green-dark text-white print:bg-uc-green-dark print:text-white">
                 <tr>
-                  <th className="px-5 py-4 font-black text-[11px] uppercase tracking-wider">Amenaza Evaluada</th>
-                  <th className="px-5 py-4 font-black text-[11px] uppercase tracking-wider text-center">Score</th>
-                  <th className="px-5 py-4 font-black text-[11px] uppercase tracking-wider">Control Recomendado (ISO)</th>
-                  <th className="px-5 py-4 font-black text-[11px] uppercase tracking-wider text-center">Estado</th>
+                  <th className="px-4 py-3 font-black text-[11px] uppercase tracking-wider">Amenaza Evaluada</th>
+                  <th className="px-4 py-3 font-black text-[11px] uppercase tracking-wider text-center">Score</th>
+                  <th className="px-4 py-3 font-black text-[11px] uppercase tracking-wider">Control Recomendado (ISO)</th>
+                  <th className="px-4 py-3 font-black text-[11px] uppercase tracking-wider text-center">Estado</th>
                 </tr>
               </thead>
               <tbody className="divide-y-2 divide-uc-gray/5 print:divide-y print:divide-uc-gray/10">
@@ -146,20 +147,20 @@ export default function Paso6Reporte() {
                   
                   return (
                     <tr key={t.id} className="bg-white print:break-inside-avoid">
-                      <td className="px-5 py-4 font-black text-uc-gray-dark align-top w-1/4">
-                        <div className="mb-1.5 leading-tight text-[13px]">{t.name}</div>
+                      <td className="px-4 py-3 font-black text-uc-gray-dark align-top w-1/4">
+                        <div className="mb-1.5 leading-tight">{t.name}</div>
                         <div className="text-[10px] font-bold text-uc-gray/40 uppercase tracking-widest whitespace-nowrap">PxI ({t.p} x {t.i}) = {t.score}</div>
                       </td>
-                      <td className="px-5 py-4 align-top text-center w-24">
-                        <span className={`inline-block w-full text-center px-1.5 py-1.5 rounded-lg text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-white ${rLabel.bg} shadow-sm border border-black/10 print:border-uc-gray/50 print:text-black print:bg-transparent`}>
+                      <td className="px-4 py-3 align-top text-center w-24">
+                        <span className={`inline-block w-full text-center px-1.5 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider text-white print:text-black print:border print:bg-transparent ${rLabel.bg} shadow-sm border border-black/10 print:border-uc-gray`}>
                           {rLabel.label}
                         </span>
                       </td>
-                      <td className="px-5 py-4 text-xs font-bold text-uc-gray/70 align-top leading-relaxed">
+                      <td className="px-4 py-3 font-bold text-uc-gray/70 align-top leading-relaxed">
                         {control}
                       </td>
-                      <td className="px-5 py-4 align-top text-center w-36">
-                        <span className={`inline-block w-full text-center px-2 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest border-2 print:border-uc-gray/20 ${
+                      <td className="px-4 py-3 align-top text-center w-32">
+                        <span className={`inline-block w-full text-center px-2 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-widest border-2 print:border-uc-gray/20 ${
                           status === 'Implementada' ? 'border-uc-green/30 text-uc-green-dark bg-uc-green/10' : 
                           status === 'En proceso' ? 'border-uc-yellow-gold/30 text-[#a37e00] bg-uc-yellow-gold/10' : 
                           'border-red-500/30 text-red-600 bg-red-50'
@@ -193,9 +194,9 @@ export default function Paso6Reporte() {
         
         {/* Pie de Página PDF */}
         <div className="mt-16 text-center text-[10px] font-bold uppercase text-uc-gray/40 tracking-widest border-t border-uc-gray/10 pt-6">
-          Generado automáticamente por SIARI - Sistema Institucional de Análisis de Riesgos en Información
+          Generado automáticamente por SARI - Sistema de Análisis de Riesgos en Información
           <br/>
-          Metodología de Auditoría basada en ISO 27001 • Universidad de Cundinamarca
+          Metodología de Auditoría basada en ISO 27001
         </div>
 
       </div>

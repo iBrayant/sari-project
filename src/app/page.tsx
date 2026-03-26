@@ -7,14 +7,16 @@ export default function Home() {
   return (
     <div className="max-w-5xl mx-auto space-y-12 py-10 px-4">
       <section className="text-center space-y-6 pt-8">
-        <div className="inline-flex items-center justify-center p-4 bg-uc-green/10 rounded-2xl mb-4">
-          <ShieldAlert className="w-12 h-12 text-uc-green-dark" />
+        <div className="flex flex-col justify-center items-center">
+            <h2 className="text-7xl md:text-8xl font-black text-uc-green-dark tracking-tight leading-none" style={{ fontFamily: '"Century Gothic", sans-serif' }}>
+              SARI
+            </h2>
+            <span className="text-[11px] md:text-xs uppercase font-bold text-uc-gray/50 tracking-widest mt-3 leading-none">
+              Sistema de Análisis de Riesgos en Información
+            </span>
         </div>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-uc-green-dark tracking-tight">
-          Protege tus Proyectos de TI
-        </h2>
-        <p className="text-lg text-uc-gray/80 max-w-2xl mx-auto leading-relaxed">
-          Bienvenido a SIARI. Una herramienta diseñada para docentes e investigadores. Evalúa, cuantifica y mitiga los riesgos de seguridad de la información en tu proyecto de forma guiada y amigable, sin necesidad de ser un experto en ciberseguridad.
+        <p className="text-lg text-uc-gray/80 max-w-2xl mx-auto leading-relaxed mt-8">
+          Bienvenido. Una herramienta diseñada para docentes e investigadores. Evalúa, cuantifica y mitiga los riesgos de seguridad de la información en tu proyecto de forma guiada y amigable, sin necesidad de ser un experto en ciberseguridad.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
