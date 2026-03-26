@@ -11,7 +11,7 @@ export function Header() {
           </h1>
           <div className="h-6 w-px bg-uc-gray/20"></div>
           <div className="relative h-6 sm:h-8 w-36 sm:w-56 shrink-0">
-             <Image src="/logo-udec.png" alt="Universidad de Cundinamarca" fill className="object-contain object-left" priority />
+             <Image src="/logo-udec.png" alt="Universidad de Cundinamarca" fill sizes="(max-width: 640px) 150px, 250px" className="object-contain object-left" priority />
           </div>
         </Link>
         <div className="hidden md:flex items-center gap-4 text-sm font-medium text-uc-gray">
