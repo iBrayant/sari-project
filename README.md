@@ -26,7 +26,7 @@ Para ejecutar este proyecto en su entorno local, asegúrese de tener instalado N
 
 1. Clone el repositorio:
    ```bash
-   git clone https://github.com/iBrayant/SIARI-PROJECT.git
+   git clone https://github.com/iBrayant/sari-project.git
    ```
 
 2. Instale las dependencias:
