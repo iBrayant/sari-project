@@ -59,6 +59,6 @@ La información ingresada permanece en la memoria local del navegador de quien u
 ## Autores
 
 <!-- TODO: completar con los nombres de los coautores -->
-**Brayant Vásquez Gómez** y colaboradores · [GitHub](https://github.com/iBrayant) · [LinkedIn](https://linkedin.com/in/brayant-vásquez-gómez)
+**Brayant Vásquez Gómez** y colaboradores · [GitHub](https://github.com/iBrayant) · [LinkedIn](https://www.linkedin.com/in/brayant-v%C3%A1squez-g%C3%B3mez-4b483a1a1)
 
 **Universidad de Cundinamarca** — Generación Siglo 21
