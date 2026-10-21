@@ -1,57 +1,64 @@
-# SARI - Sistema de Análisis de Riesgos en Información
+# SARI — Sistema de Análisis de Riesgos en Información
 
-SARI es una aplicación web diseñada para investigadores, docentes y gestores de proyectos de TI que buscan evaluar y mitigar riesgos de seguridad de la información de manera estructurada y profesional, siguiendo los estándares internacionales de la industria.
+![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-deploy-000000?logo=vercel&logoColor=white)
 
-## 🚀 Características Principales
+Aplicación web para que investigadores, docentes y gestores de proyectos de TI evalúen los riesgos de seguridad de la información de su proyecto de forma guiada, sin ser expertos en ciberseguridad. Identifica activos y amenazas, calcula el nivel de riesgo, lo muestra en un mapa de calor y genera un plan de tratamiento y un reporte ejecutivo basados en ISO 27001.
 
-- **Metodología Basada en ISO 27001**: Evaluación guiada por dominios y controles internacionales.
-- **Flujo de 6 Pasos**: Desde el registro del proyecto hasta la generación del reporte final.
-- **Matriz de Riesgos Automatizada**: Generación de una matriz de calor (Heatmap) interactiva basada en Probabilidad e Impacto.
-- **Tratamiento de Riesgos**: Catálogo de controles recomendados para cada tipo de amenaza identificada.
-- **Reportes Profesionales**: Generación de reportes ejecutivos en formato PDF listos para auditoría y firmas.
-- **Privacidad Local**: Los datos se almacenan exclusivamente en el navegador del usuario (LocalStorage), garantizando que la información sensible no salga del dispositivo.
+> Obra con registro ante la DNDA (2026). Proyecto de la Universidad de Cundinamarca.
 
-## 🛠️ Tecnologías Utilizadas
+<!-- TODO: captura o GIF del flujo (guardar en docs/img/) -->
+<!-- ![Demo](docs/img/demo.png) -->
+<!-- TODO: enlace a la demo desplegada en Vercel -->
 
-- **Framework**: Next.js 15 (App Router)
-- **Lenguaje**: TypeScript
-- **Estilos**: Tailwind CSS v4
-- **Gestión de Estado**: Zustand (con middleware de persistencia)
-- **Iconografía**: Lucide React
-- **Despliegue**: Vercel
+## Características
 
-## 📦 Instalación y Ejecución Local
+- **Flujo guiado de 6 pasos:** registro del proyecto, identificación de amenazas, valoración, matriz de riesgos, plan de tratamiento y reporte final.
+- **Catálogo de 12 amenazas** comunes en entornos universitarios (phishing, ransomware, acceso no autorizado, falta de copias de seguridad, etc.), con descripción para cada una.
+- **Valoración por probabilidad e impacto** en escala 1–3; el nivel de riesgo es su producto (muy bajo, bajo, medio, alto y crítico).
+- **Mapa de calor interactivo** que ubica cada amenaza en la matriz de riesgos.
+- **Plan de tratamiento** con un control recomendado por amenaza (basado en ISO 27001) y seguimiento de estado: pendiente, en proceso o implementada.
+- **Reporte ejecutivo imprimible**, listo para guardar como PDF desde el navegador.
+- **Privacidad por diseño:** no hay backend ni base de datos; todo se guarda en el `localStorage` del navegador y nunca sale del dispositivo.
 
-Para ejecutar este proyecto en su entorno local, asegúrese de tener instalado Node.js (v18 o superior).
+## Stack
 
-1. Clone el repositorio:
-   ```bash
-   git clone https://github.com/iBrayant/sari-project.git
-   ```
+Next.js (App Router) · React 19 · TypeScript · Tailwind CSS 4 · Zustand (con persistencia) · Lucide
 
-2. Instale las dependencias:
-   ```bash
-   npm install
-   ```
+## Estructura
 
-3. Inicie el servidor de desarrollo:
-   ```bash
-   npm run dev
-   ```
+```
+src/
+├── app/
+│   ├── evaluacion/       -> flujo de 6 pasos (nuevo, paso-1 … paso-6)
+│   ├── historial/        -> evaluación guardada localmente
+│   └── page.tsx          -> página de inicio
+├── components/           -> layout (Header, Footer) y UI (Button, Card)
+└── store/                -> estado global y persistencia (Zustand)
+```
 
-4. Abra [http://localhost:3000](http://localhost:3000) en su navegador para ver el resultado.
+## Cómo correrlo
 
-## 📑 Estructura del Proyecto
+Requiere Node.js 18 o superior.
 
-- `/src/app`: Rutas y páginas de la aplicación.
-- `/src/components`: Componentes de interfaz reutilizables.
-- `/src/store`: Lógica de gestión de estado y persistencia de datos.
-- `/public`: Activos estáticos como logotipos e íconos.
+```bash
+git clone git@github.com:iBrayant/sari-project.git
+cd sari-project
+npm install
+npm run dev
+```
 
-## 🛡️ Seguridad y Privacidad
+Abre http://localhost:3000. Para compilar: `npm run build && npm start`.
 
-SARI ha sido desarrollado bajo un enfoque de **Privacidad por Diseño**. La aplicación no requiere de una base de datos centralizada; toda la información ingresada permanece en la memoria local del navegador del investigador, eliminando riesgos de filtración de datos en tránsito o almacenados en servidores externos.
+## Privacidad
 
----
-**Universidad de Cundinamarca**  
-*Generación Siglo 21*
+La información ingresada permanece en la memoria local del navegador de quien usa la herramienta. Al no existir un servidor que la reciba, se eliminan los riesgos de filtración en tránsito o de almacenamiento en servidores externos.
+
+## Autores
+
+<!-- TODO: completar con los nombres de los coautores -->
+**Brayant Vásquez Gómez** y colaboradores · [GitHub](https://github.com/iBrayant) · [LinkedIn](https://linkedin.com/in/brayant-vásquez-gómez)
+
+**Universidad de Cundinamarca** — Generación Siglo 21
